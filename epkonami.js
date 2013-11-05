@@ -1,5 +1,5 @@
 // insert dependency modules in the list
-define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {   // or, you could use these deps in a separate module using define
+define(['jquery', 'underscore'], function ($, _) {   // or, you could use these deps in a separate module using define
 
     var epkonami = {
 
@@ -50,6 +50,7 @@ define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {   // or
                 'left': this.darkness.width()/4,
                 'font-size': '20px'
             });
+            elem.attr('id', 'center');
             this.darkness.append(elem);
             elem.animate({
                 'opacity': 1
@@ -106,6 +107,39 @@ define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {   // or
                 elem.css({left:randX, top: randY});
             
             }.bind(this));
+
+            // _.each(hintElems, function(elem) {
+                
+            //     this.darkness.mousemove(function(e){
+
+            //         var leftTarget,
+            //             topTarget,
+            //             duration; 
+                    
+            //         if (e.pageX - elem.offset().left > 0) {
+            //             leftTarget = "0px";
+            //         } else {
+            //             leftTarget = maxX + "px";
+            //         }
+
+
+            //         elem.stop().animate({ 
+            //             "left": leftTarget
+            //         }, "slow");
+            //     });
+
+            // }.bind(this));
+
+            //     this.darkness.mousemove(function(e){
+            //         e.pageX
+            //         var dWidth = $(document).width() - 100, // 100 = image width
+            //             dHeight = $(document).height() - 100, // 100 = image height
+            //             nextX = Math.floor(Math.random() * dWidth),
+            //             nextY = Math.floor(Math.random() * dHeight);
+            //         $(this).animate({ left: nextX + 'px', top: nextY + 'px' });
+            //     });
+            // });
+
 
             this.activateKey(hintElems[0]);
 
